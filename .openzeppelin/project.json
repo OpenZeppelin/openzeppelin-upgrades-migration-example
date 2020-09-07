@@ -1,0 +1,26 @@
+{
+  "manifestVersion": "2.2",
+  "contracts": {
+    "Box": "Box",
+    "BoxV3": "BoxV3"
+  },
+  "dependencies": {},
+  "name": "sdk-plugins-migration-test",
+  "version": "1.0.0",
+  "compiler": {
+    "compilerSettings": {
+      "optimizer": {
+        "enabled": false,
+        "runs": "200"
+      }
+    },
+    "typechain": {
+      "enabled": false
+    },
+    "manager": "openzeppelin",
+    "solcVersion": "0.6.12",
+    "artifactsDir": "build/contracts",
+    "contractsDir": "contracts"
+  },
+  "telemetryOptIn": false
+}
