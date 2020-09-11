@@ -20,9 +20,9 @@ module.exports = {
   solc: {
     version: "0.6.8",
   },
-  defaultNetwork: 'perrito',
+  defaultNetwork: 'rinkeby',
   networks: {
-    perrito: {
+    rinkeby: {
       url: 'http://localhost:8545',
     },
   },
