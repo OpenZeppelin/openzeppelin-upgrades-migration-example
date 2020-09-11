@@ -3,15 +3,16 @@
 pragma solidity ^0.6.0;
 
 
-contract Box {
+contract BoxV2 {
     uint256 private value;
-    bool private flag;
+    bool private readonly;
 
     // Emitted when the stored value changes
     event ValueChanged(uint256 newValue);
 
     // Stores a new value in the contract
     function store(uint256 newValue) public {
+        require(! readonly);
         value = newValue;
         emit ValueChanged(newValue);
     }
@@ -21,8 +22,9 @@ contract Box {
         return value;
     }
 
-    function set() public returns (bool) {
-        flag = !flag;
-        return flag;
+    // Sets readability
+    function setReadonly(bool _readonly) public returns (bool) {
+        readonly = _readonly;
+        return readonly;
     }
 }

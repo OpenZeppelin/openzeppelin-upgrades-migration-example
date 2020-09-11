@@ -5,29 +5,17 @@ pragma solidity ^0.6.0;
 
 contract BoxV3 {
     uint256 private value;
-    bool private flag;
-    mapping (uint => bool) par;
-
-    struct Foo {
-        bool x;
-    }
-
-    enum Direction { UP, DOWN }
-
-    Foo private foo;
-    Direction private dir;
-    uint[] private intArray;
-    Direction[] private dirArray;
-    bytes8 ocho;
-    uint[10] enteritos;
-
+    bool private readOnly;
 
     // Emitted when the stored value changes
     event ValueChanged(uint256 newValue);
+    event ReadOnlyChanged(bool readOnly);
 
     // Stores a new value in the contract
     function store(uint256 newValue) public {
-        par[newValue] = true;
+        require(! readOnly);
+        value = newValue;
+        emit ValueChanged(newValue);
     }
 
     // Reads the last stored value
@@ -35,12 +23,10 @@ contract BoxV3 {
         return value;
     }
 
-    function set() public returns (bool) {
-        flag = !flag;
-        return flag;
-    }
-
-    function get() public view returns (bool) {
-        return flag;
+    // Sets readability
+    function setReadOnly(bool _readOnly) public returns (bool) {
+        readOnly = _readOnly;
+        emit ReadOnlyChanged(readOnly);
+        return readOnly;
     }
 }

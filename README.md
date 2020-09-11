@@ -1,1 +1,1 @@
-# openzeppelin-upgrades-plugins-migration-example
+# openzeppelin-upgrades-migration-example

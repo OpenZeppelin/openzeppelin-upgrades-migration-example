@@ -3,7 +3,7 @@
 pragma solidity ^0.6.0;
 
 
-contract BoxV0 {
+contract Box {
     uint256 private value;
 
     // Emitted when the stored value changes

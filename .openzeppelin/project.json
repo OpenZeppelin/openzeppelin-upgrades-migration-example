@@ -1,11 +1,10 @@
 {
   "manifestVersion": "2.2",
   "contracts": {
-    "Box": "Box",
-    "BoxV3": "BoxV3"
+    "Box": "Box"
   },
   "dependencies": {},
-  "name": "sdk-plugins-migration-test",
+  "name": "openzeppelin-upgrades-migration-example",
   "version": "1.0.0",
   "compiler": {
     "compilerSettings": {
