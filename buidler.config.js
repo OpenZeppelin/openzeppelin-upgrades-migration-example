@@ -20,10 +20,10 @@ module.exports = {
   solc: {
     version: "0.6.8",
   },
-  defaultNetwork: 'rinkeby',
+  defaultNetwork: 'buidlerevm',
   networks: {
-    rinkeby: {
-      url: 'http://localhost:8545',
+    buidlerevm: {
+      chainId: 4,
     },
   },
 };
