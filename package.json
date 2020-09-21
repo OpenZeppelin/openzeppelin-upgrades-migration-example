@@ -15,7 +15,5 @@
     "ethers": "^5.0.8",
     "truffle": "^5.1.45"
   },
-  "dependencies": {
-    "ganache-cli": "^6.10.2"
-  }
+  "dependencies": {}
 }
