@@ -9,13 +9,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@nomiclabs/buidler": "^1.4.4",
-    "@nomiclabs/buidler-ethers": "^2.0.0",
-    "@nomiclabs/buidler-waffle": "^2.0.0",
     "@openzeppelin/cli": "^2.8.2",
+    "@openzeppelin/truffle-upgrades": "^1.1.0",
     "chai": "^4.2.0",
-    "ethereum-waffle": "^3.0.2",
-    "ethers": "^5.0.8"
+    "ethers": "^5.0.8",
+    "truffle": "^5.1.45"
   },
   "dependencies": {
     "ganache-cli": "^6.10.2"
