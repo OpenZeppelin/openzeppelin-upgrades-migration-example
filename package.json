@@ -16,8 +16,7 @@
     "@openzeppelin/cli": "^2.8.2",
     "chai": "^4.2.0",
     "ethereum-waffle": "^3.0.2",
-    "ethers": "^5.0.8",
-    "ganache-cli": "^6.10.2"
+    "ethers": "^5.0.8"
   },
   "dependencies": {}
 }
