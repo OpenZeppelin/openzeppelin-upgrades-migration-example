@@ -18,6 +18,10 @@ task("accounts", "Prints the list of accounts", async () => {
 module.exports = {
   // This is a sample solc configuration that specifies which version of solc to use
   solc: {
-    version: "0.6.8",
+    version: "0.6.12",
+    optimizer: {
+      enabled: true,
+      runs: 200,
+    }
   },
 };
