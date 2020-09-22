@@ -1,4 +1,4 @@
-# openzeppelin-upgrades-migration-example
+# OpenZeppelin CLI to Upgrades plugins migration
 
 This repo is a sample [OpenZeppelin CLI](https://github.com/OpenZeppelin/openzeppelin-sdk/blob/master/packages/cli) project intended to be migrated using the [Buidler or Truffle upgrade plugins](https://github.com/OpenZeppelin/openzeppelin-upgrades).
 
@@ -13,23 +13,30 @@ $ git checkout truffle
 $ git checkout buidler
 ```
 
-**Only then** install the dependencies (each branch have their own)
+**Only then** install the dependencies (each branch have their own).
 
 ```bash
 $ yarn
 ```
 
-Make sure you run a local chain
+Make sure you run a local chain and don't forget to use it! (see final step).
 
 ```bash
-$ npx buidler node   # it will be easier to use this one for buidler
+$ npx buidler node   # easier for buidler
 $ npx ganache-cli    # we will need extra steps for truffle (see below)
 ```
 
-Then deploy the `Box` contract using the OpenZeppelin CLI
+Then deploy the `Box` contract to the `rinkeby` network using the OpenZeppelin CLI.
 
 ```bash
 $ npx oz deploy
+```
+
+Finally, from this step on remember to send all calls and transactions to the `localhost` network.
+
+```bash
+$ npx buidler run scripts/upgradeToV2.js --network localhost
+$ npx truffle migrate --network localhost
 ```
 
 ## Before running the project migration script (Truffle only)
@@ -55,5 +62,3 @@ $ mv .openzeppelin/rinkeby.json .openzeppelin/unknown-1337.json
 ```
 
 > Notice that the previous name had a variable name (the `x`'s indicating the timestamp at which `ganache-cli` was run) while the new one has a fixed `1337`, corresponding to ganache's `chainId` value.
-
-And from now on, use `localhost` instead of `rinkeby` in every step of [the guide](https://www.notion.so/write-migration-guide-16a0237047f64cb8b236e8d18e64e5d4) that specifies a network.
