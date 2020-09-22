@@ -20,10 +20,4 @@ module.exports = {
   solc: {
     version: "0.6.8",
   },
-  defaultNetwork: 'buidlerevm',
-  networks: {
-    buidlerevm: {
-      chainId: 4,
-    },
-  },
 };
