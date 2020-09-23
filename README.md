@@ -25,6 +25,7 @@ Run a local chain and don't forget to use it! (see final step).
 
 ```bash
 $ npx buidler node   # easier for buidler
+# or
 $ npx ganache-cli    # we will need extra steps for truffle (see below)
 ```
 
@@ -46,7 +47,9 @@ $ npx truffle migrate --network localhost
 
 Since the CLI migration script not only ignores but it deletes development network files, we can't test our migration with them. This is why this repo has preconfigured OpenZeppelin CLI, Truffle and Buidler settings to fake a local `rinkeby` network (`chainId == 4`) to circumvent this issue.
 
-Nevertheless, since `ganache-cli` doesn't support a custom `chainId` yet we'll have to trick the migration script by manually changing the network file name before and after running it. So, the `oz deploy` command we run before created a `dev-xxxxxxxxxxxxx.json` file under the `.openzeppelin` directory. Take that file and name it `rinkeby.json`:
+Additionally if you're using Truffle, we'll have to trick the migration script by manually changing the network file name before and after running it since `ganache-cli` doesn't support custom `chainId` yet.
+
+So, the `oz deploy` command we run before created a `dev-xxxxxxxxxxxxx.json` file under the `.openzeppelin` directory. Take that file and name it `rinkeby.json`:
 
 ```bash
 $ mv .openzeppelin/dev-1600712876728.json .openzeppelin/rinkeby.json
