@@ -16,10 +16,12 @@ $ git checkout buidler
 **Only then** install the dependencies (each branch have their own).
 
 ```bash
-$ yarn
+$ npm install
 ```
 
-Make sure you run a local chain and don't forget to use it! (see final step).
+Run a local chain and don't forget to use it! (see final step).
+
+> Since the migration script is for public and not for development chains, we will need to cheat a bit. More on this below.
 
 ```bash
 $ npx buidler node   # easier for buidler
@@ -36,14 +38,15 @@ Finally, from this step on remember to send all calls and transactions to the `l
 
 ```bash
 $ npx buidler run scripts/upgradeToV2.js --network localhost
+# or
 $ npx truffle migrate --network localhost
 ```
 
-## Before running the project migration script (Truffle only)
+## A little bit of cheating
 
-Since the CLI migration script not only ignores but it deletes development network manifest files, we can't test our migration with them. This repo was set up to circumvent this issue by faking a local `rinkeby` network configuring Buidler's local chain to have `chainId == 4`, but since `ganache-cli` doesn't support this yet we'll have to trick the migration script by manually changing the manifest file name before and after running it.
+Since the CLI migration script not only ignores but it deletes development network manifest files, we can't test our migration with them. This repo was set up to circumvent this issue by faking a local `rinkeby` network configuring buidlerevm to have `chainId == 4` (this is why this repo preconfigures Buidler for you).
 
-So, the `oz deploy` command we run before created a `dev-xxxxxxxxxxxxx.json` file under the `.openzeppelin` directory. Take that file and name it `rinkeby.json`:
+But since `ganache-cli` doesn't support this yet we'll have to trick the migration script by manually changing the manifest file name before and after running it. So, the `oz deploy` command we run before created a `dev-xxxxxxxxxxxxx.json` file under the `.openzeppelin` directory. Take that file and name it `rinkeby.json`:
 
 ```bash
 $ mv .openzeppelin/dev-1600712876728.json .openzeppelin/rinkeby.json
