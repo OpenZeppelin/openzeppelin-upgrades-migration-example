@@ -1,8 +1,8 @@
-# OpenZeppelin CLI to Upgrades plugins migration
+# OpenZeppelin CLI to Upgrades Plugins migration
 
 This repo is a sample [OpenZeppelin CLI](https://github.com/OpenZeppelin/openzeppelin-sdk/blob/master/packages/cli) project intended to be migrated using the [Buidler or Truffle upgrade plugins](https://github.com/OpenZeppelin/openzeppelin-upgrades).
 
-Use this repo to test the migration script as explained in the [CLI → Plugins migration guide](https://www.notion.so/write-migration-guide-16a0237047f64cb8b236e8d18e64e5d4).
+Use this repo to test the migration script as explained in [Migrate from OpenZeppelin CLI](https://docs.openzeppelin.com/upgrades-plugins/migrate-from-cli).
 
 ## But first, reproduce the required environment
 Make sure you checkout to the `truffle` or `buidler` branch of this repo depending on which tool you intend to use.
