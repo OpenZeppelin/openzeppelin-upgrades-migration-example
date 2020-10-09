@@ -1,4 +1,4 @@
-# OpenZeppelin CLI to Upgrades plugins migration
+# OpenZeppelin CLI to Upgrades Plugins migration
 
 This repo is a sample [OpenZeppelin CLI](https://github.com/OpenZeppelin/openzeppelin-sdk/blob/master/packages/cli) project intended to be migrated using the [Buidler or Truffle upgrade plugins](https://github.com/OpenZeppelin/openzeppelin-upgrades).
 
