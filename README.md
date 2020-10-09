@@ -32,7 +32,7 @@ $ npx ganache-cli    # we will need extra steps for truffle (see below)
 Then deploy the `Box` contract to the `rinkeby` network using the OpenZeppelin CLI.
 
 ```bash
-$ npx oz deploy
+$ npx oz deploy Box -n rinkeby -k upgradeable --no-interactive
 ```
 
 Finally, from this step on remember to send all calls and transactions to the `localhost` network.
