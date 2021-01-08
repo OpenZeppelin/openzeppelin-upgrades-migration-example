@@ -46,7 +46,7 @@ To upgrade this instance run 'oz upgrade'
 Finally, from this step on remember to send all calls and transactions to the `localhost` network.
 
 ```bash
-$ npx hardhat run scripts/upgradeToV2.js --network localhost
+$ npx hardhat run scripts/upgradeBoxToV2.js --network localhost
 # or
 $ npx truffle migrate --network localhost
 ```
