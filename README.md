@@ -32,13 +32,21 @@ $ npx ganache-cli    # we will need extra steps for truffle (see below)
 Then deploy the `Box` contract to the `rinkeby` network using the OpenZeppelin CLI.
 
 ```bash
-$ npx oz deploy Box -n rinkeby -k upgradeable --no-interactive
+$ npx oz deploy Box -n rinkeby -k upgradeable
+✓ Compiled contracts with solc 0.6.12 (commit.27d51765)
+✓ Contract Box deployed
+All implementations have been deployed
+? Call a function to initialize the instance after creating it? No
+✓ Setting everything up to create contract instances
+✓ Instance created at 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+To upgrade this instance run 'oz upgrade'
+0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
 ```
 
 Finally, from this step on remember to send all calls and transactions to the `localhost` network.
 
 ```bash
-$ npx hardhat run scripts/upgradeToV2.js --network localhost
+$ npx hardhat run scripts/upgradeBoxToV2.js --network localhost
 # or
 $ npx truffle migrate --network localhost
 ```
