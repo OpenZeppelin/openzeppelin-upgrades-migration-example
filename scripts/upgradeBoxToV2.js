@@ -1,4 +1,4 @@
-const { ethers, upgrades } = require("@nomiclabs/buidler");
+const { ethers, upgrades } = require("hardhat");
 const OZ_SDK_EXPORT = require("../openzeppelin-cli-export.json");
 
 async function main() {
